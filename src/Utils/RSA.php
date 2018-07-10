@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: EnHe <i@microio.cn>
+ * Author: EnHe <info@wowphp.cn>
  * Date: 2018/5/28
  * Time: 下午10:26
  */
@@ -70,7 +70,7 @@ class RSA
             ksort($dataArr);
 
             if(! empty($signName)) $dataArr = self::arrayRemove($dataArr,$signName);
-            
+
             $data = urldecode(http_build_query($dataArr));
         }
 

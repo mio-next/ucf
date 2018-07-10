@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: EnHe <i@microio.cn>
+ * Author: EnHe <info@wowphp.cn>
  * Date: 2018/5/28
  * Time: 下午10:39
  */
@@ -39,7 +39,9 @@ class DefaultPaymentGateway extends Gateway
             $result     = AES::decrypt($response->getBody()->getContents(), $this->config->get('mer_rsa_key'));
 
             return json_decode($result, 1);
-        } catch (\Exception $exception) {
+        }
+
+        catch (\Exception $exception) {
             if (function_exists('info')) {
                 info(__METHOD__, [$exception->getMessage() . ' : ' . $exception->getTraceAsString()]);
             }
@@ -70,7 +72,9 @@ class DefaultPaymentGateway extends Gateway
 
             return json_decode($result, 1);
 
-        } catch (\Exception $exception) {
+        }
+
+        catch (\Exception $exception) {
             if (function_exists('info')) {
                 info(__METHOD__, [$exception->getMessage() . ' : ' . $exception->getTraceAsString()]);
             }
